@@ -8,6 +8,17 @@ const generateMarkdown = require("./utils/generateMarkdown")
 const questions = [
     {
         type: "input",
+        name: "author",
+        message: "What is your name?"
+    },   
+    {
+        type: "checkbox",
+        name: "contact",
+        message: "How should people reach out to you?",
+        choices: ["email", "LinkedIn", "GitHub", "website", "N/A"]
+    },
+    {
+        type: "input",
         name: "title",
         message: "What is the name of this project?"
     },
@@ -25,8 +36,33 @@ const questions = [
     {
         type: "input",
         name: "usage",
-        message: ""
+        message: "What command should be used to run your application?"
     },
+
+    {
+        type: "confirm",
+        name: "credit",
+        message: "Would you like to share credit or tip your hat to any contributors?"
+    },
+    {
+        type: "input",
+        name: "contributors",
+        message: "Whom would you like to acknowledge?",
+        when: function(answers){
+            return answers.credit;
+        }
+    },
+    {
+        type: "confirm",
+        name: "tests",
+        message: "Are there any tests for this application?"
+    },
+    {
+        type: "input",
+        name: "testInstructions",
+        message: "What command(s) should be used to test your application?"
+    },
+    
 
 ];
 
