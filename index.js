@@ -12,10 +12,28 @@ const questions = [
         message: "What is your name?"
     },   
     {
-        type: "checkbox",
-        name: "contact",
-        message: "How should people reach out to you?",
-        choices: ["email", "LinkedIn", "GitHub", "website", "N/A"]
+        type: "input",
+        name: "email",
+        message: "Enter your email if you'd like to be reached by email.",
+        default: "N/A",
+    },
+    {
+        type: "input",
+        name: "GitHub",
+        message: "Enter your GitHub username if you'd like to share your work.",
+        default: "N/A",
+    },
+    {
+        type: "input",
+        name: "LinkedIn",
+        message: "Share a link to your LinkedIn profile if you'd like.",
+        default: "N/A",
+    },
+    {
+        type: "input",
+        name: "website",
+        message: "Share a link to your professional website.",
+        default: "N/A"
     },
     {
         type: "input",
@@ -62,6 +80,18 @@ const questions = [
         name: "testInstructions",
         message: "What command(s) should be used to test your application?"
     },
+    {
+        type: "list",
+        name: "license",
+        message: "What type of license would you like to use?",
+        choices: ["MIT", "APACHE 2.0", "GPL 3.0", "ISC", "Unlicensed"]
+    },
+    {
+        type: "checkbox",
+        name: "contents",
+        message: "Which sections would you like to include in the Table of Contents",
+        choices: ["Installation", "Instructions", "Testing", "Credits & Contributions", "License", "Questions & Contact"]
+    }
     
 
 ];
