@@ -78,7 +78,10 @@ const questions = [
     {
         type: "input",
         name: "testInstructions",
-        message: "What command(s) should be used to test your application?"
+        message: "What command(s) should be used to test your application?",
+        when: function(answers){
+            return answers.tests;
+        }
     },
     {
         type: "list",
@@ -86,23 +89,22 @@ const questions = [
         message: "What type of license would you like to use?",
         choices: ["MIT", "APACHE 2.0", "GPL 3.0", "ISC", "Unlicensed"]
     },
-    {
-        type: "checkbox",
-        name: "contents",
-        message: "Which sections would you like to include in the Table of Contents",
-        choices: ["Installation", "Instructions", "Testing", "Credits & Contributions", "License", "Questions & Contact"]
-    }
     
-
 ];
 
-// function to write README file
-function writeToFile(fileName, data) {
-}
-
 // function to initialize program
-function init() {
-
+async function init() {
+    console.log("Welcome to the README generator! Get ready to answer some questions.")
+    const answers = await inquirer.prompt(questions);
+    const readmeText = await generateMarkdown(answers);
+    await writeToFile ("README.md", readmeText, (error) => {
+        if (error){
+            console.log(error)
+        }
+        else {
+            console.log("Congratulations! Your README has been generated.")
+        }}
+    )
 }
 
 // function call to initialize program
