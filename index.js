@@ -54,7 +54,8 @@ const questions = [
     {
         type: "input",
         name: "usage",
-        message: "What command should be used to run your application?"
+        message: "What command should be used to run your application?",
+        default: "node index.js"
     },
 
     {
