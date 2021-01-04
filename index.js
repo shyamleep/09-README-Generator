@@ -35,6 +35,7 @@ const questions = [
         message: "Share a link to your professional website.",
         default: "N/A"
     },
+
     {
         type: "input",
         name: "title",
@@ -98,7 +99,7 @@ async function init() {
     console.log("Welcome to the README generator! Get ready to answer some questions.")
     const answers = await inquirer.prompt(questions);
     const readmeText = await generateMarkdown(answers);
-    await writeToFile ("README.md", readmeText, (error) => {
+    await fs.writeFile("README.md", readmeText, (error) => {
         if (error){
             console.log(error)
         }

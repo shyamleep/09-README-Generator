@@ -19,9 +19,9 @@ function generateMarkdown(answers) {
   ## Description ${answers.description}
 
   ## Table of Contents 
-  * [Installation] (#installation)
-  * [Usage] (#usage)
-  * [Contributors] (#contributors)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Contributors](#contributors)
   * [Testing] (#testing)
   * [License] (#license)
   * [Questions and Contact] (#questions-and-contact)
