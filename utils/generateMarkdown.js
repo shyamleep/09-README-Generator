@@ -3,15 +3,15 @@ function generateMarkdown(answers) {
 
   let licenseURL = ""
   if (answers.license === "MIT") {
-    licenseURL = "[![License] (https://img.shield.io/badge/License-MIT-green)]"
+    licenseURL = "[![License](https://img.shield.io/badge/License-MIT-green)]"
   } else if (answers.license === "GPL 3.0") {
-    licenseURL = "[![License] (https://img.shields.io/badge/License-GPL%203.0-green)]"
+    licenseURL = "[![License](https://img.shields.io/badge/License-GPL%203.0-green)]"
   } else if (answers.license === "APACHE 2.0") {
-    licenseURL = "[![License] (https://img.shields.io/badge/License-APACHE%202.0-green)]"
+    licenseURL = "[![License](https://img.shields.io/badge/License-APACHE%202.0-green)]"
   } else if (answers.license === "ISC") {
-    licenseURL = "[![License] (https://img.shields.io/badge/License-ISC-green)]"
+    licenseURL = "[![License](https://img.shields.io/badge/License-ISC-green)]"
   } else if (answers.license === "Unlicensed") {
-    licenseURL = "[![License] (https://img.shields.io/badge/License-Unlicensed-green)]"
+    licenseURL = "[![License](https://img.shields.io/badge/License-Unlicensed-green)]"
   };
 
   return `# ${answers.title}
@@ -22,9 +22,9 @@ function generateMarkdown(answers) {
   * [Installation](#installation)
   * [Usage](#usage)
   * [Contributors](#contributors)
-  * [Testing] (#testing)
-  * [License] (#license)
-  * [Questions and Contact] (#questions-and-contact)
+  * [Testing](#testing)
+  * [License](#license)
+  * [Questions and Contact](#questions-and-contact)
 
   ## Installation
   To install application and its dependencies use the following command:
